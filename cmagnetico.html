@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley de Coulomb</title>
+    <link rel="stylesheet" href="cmagnetico.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora | FISICA</h1>
+        <nav class="opciones">
+            <a href="index.html">Conversor de Magnitudes</a>
+            <a href="fuerza.html">Fuerza Magnetica</a>
+            <a href="calculadora.html">Calculadora Normal</a>
+        </nav>
+    </header>
+    <center>
+        <div class="container">
+            <div id="coulomb">
+                <b>Ingrese sus valores</b><br>
+                Fe = k(|q1||q2|)/r^2
+                <br><br>
+                q1
+                <input type="number" id="q1number"> C<br>
+                q2
+                <input type="number" id="q2number"> C<br>
+                Distancia
+                <input type="number" id="rnumber"> m<br>
+                Fuerza
+                <input type="number" id="fe"> N<br>
+
+                <button onclick="Coulomb()"> = </button>
+
+                <p id="C">0</p>
+            </div>
+        </div>
+    </center>
+    <script>
+        function Coulomb() {
+            var q1 = Math.abs(document.getElementById("q1number").value);
+            var q2 = Math.abs(document.getElementById("q2number").value);
+            var r = document.getElementById("rnumber").value;
+            var Fe = document.getElementById("fe").value;
+            var k = 90000;
+
+            if (Fe === "") {
+                document.getElementById("C").innerHTML = (k * (q1 * q2) / (r ** 2)).toExponential() + "N";
+            } else if (r === "") {
+                document.getElementById("C").innerHTML = Math.sqrt(k * (q1 * q2) / Fe).toExponential() + "m";
+            } else if (q1 === "") {
+                document.getElementById("C").innerHTML = (((Fe * (r ** 2)) / k) / q2).toExponential() + "C";
+            } else if (q2 === "") {
+                document.getElementById("C").innerHTML = (((Fe * (r ** 2)) / k) / q1).toExponential() + "C";
+            } else {
+                alert("Deja el espacio vacío del elemento a calcular.");
+            }
+        }
+    </script>
+</body>
+</html>

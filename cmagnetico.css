@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+body {
+    background-image: url(PYZK.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fffbf8;
+    font-family: 'Alata', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    background:linear-gradient(90deg, #ddd5cc, #fffbf8);
+    color:#5C5470;
+    margin: 0;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}   
+
+a {
+    text-decoration: none;
+    color: #5C5470;
+    font-weight: 500;
+    padding-right: 10px;
+}
+
+a:hover{
+    color: #ffffff;
+    background-color:#5C5470;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+nav {
+        padding: 10px 0px;
+    }
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    border: 5px solid #FAF0E6;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background-color: #352F44;
+    border-radius: 16px;
+    box-shadow: 0 5px 30px #000000;
+    color: #FAF0E6;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Alata', sans-serif;
+    margin-top: 6%;
+}
+
+input {
+    border-radius: 10px;
+    color: #352F44;  
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Alata', sans-serif;
+    background-color: #FAF0E6;
+}
+
+button {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 4px;
+    box-shadow: inset 5px 5px 8px #ccc4bb, inset -5px -5px 8px #fffaf6;
+    background-color: #FAF0E6;
+    color: #352F44;
+    font-family: 'Alata', sans-serif;
+    margin: 20px;
+}
+

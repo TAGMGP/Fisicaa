@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de F. Magnetica</title>
+    <link rel="stylesheet" href="fuerza.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora | FISICA</h1>
+        <nav class="opciones">
+            <a href="cmagnetico.html">Ley de Coulumb</a>
+            <a href="index.html">Conversor de Magnitudes</a>
+            <a href="calculadora.html">Calculadora Normal</a>
+        </nav>
+    </header>
+    <center>
+    <div class="container">
+    <h1>Calculadora de Fuerza Magnética</h1>
+
+    <label for="longitudConductor">Longitud del Conductor (m):</label>
+    <input type="text" id="longitudConductor" placeholder="Ejemplo: 0.1" />
+    <br>
+    
+    <label for="intensidadCorriente">Intensidad de Corriente (A):</label>
+    <input type="text" id="intensidadCorriente" placeholder="Ejemplo: 1e-6" />
+    <br>
+    
+    <label for="campoMagnetico">Campo Magnético (T):</label>
+    <input type="text" id="campoMagnetico" placeholder="Ejemplo: 0.2" />
+    <br>
+    
+    <label for="angulo">Ángulo entre el Conductor y el Campo (grados):</label>
+    <input type="text" id="angulo" placeholder="Ejemplo: 30" />
+    <br>
+    
+    <button onclick="calcularFuerzaMagnetica()">Calcular Fuerza Magnética</button>
+    
+    <p>Resultado:</p>
+    <div id="resultado"></div>
+    </div>
+    </center>
+</body>
+    <script>
+        function calcularFuerzaMagnetica() {
+        const permeabilidadVacuo = 4 * Math.PI * Math.pow(10, -7);
+        // Obtiene los valores del usuario en notación científica
+        const longitudConductor = parseFloat(document.getElementById("longitudConductor").value);
+        const intensidadCorriente = parseFloat(document.getElementById("intensidadCorriente").value);
+        const campoMagnetico = parseFloat(document.getElementById("campoMagnetico").value);
+        const angulo = parseFloat(document.getElementById("angulo").value);
+        // Calcula la fuerza magnética
+        const fuerzaMagnetica = longitudConductor * intensidadCorriente * campoMagnetico * Math.sin(angulo * (Math.PI / 180));
+        // Muestra el resultado en notación científica
+        document.getElementById("resultado").innerHTML = fuerzaMagnetica.toExponential(2);
+        }
+    </script>
+</html>
