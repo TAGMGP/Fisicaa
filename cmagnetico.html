@@ -3,62 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ley De Coulomb</title>
+    <title>Ley De coulumb</title>
     <link rel="stylesheet" href="cmagnetico.css">
-    <style>
-        #vectorContainer {
-            background-color: white;
-            padding: 20px;
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #coulombVector {
-            border: 2px solid black;
-            height: 100px; /* Puedes ajustar la altura según sea necesario */
-            transform: rotate(45deg); /* Ángulo del vector */
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>Calculadora FISICA</h1>
-        <nav class="opciones">
-            <a href="unidades.html">Conversor de Magnitudes</a>
-            <a href="fuerza.html">Fuerza Magnetica</a>
-            <a href="calculadora.html">Calculadora Normal</a>
-        </nav>
-    </header>
-    <center>
-        <div class="container">
-            <div id="coulomb">
-                <b>Coulomb's Law:</b><br>
-                Fe = k(|q1||q2|)/r^2
-                <br><br>
-                q1 = <input type="number" id="q1number">C<br>
-                q2 = <input type="number" id="q2number">C<br>
-                r = <input type="number" id="rnumber">m<br>
-                Fe = <input type="number" id="fe">N<br>
-                
-                <button onclick="Coulomb()">=</button>
-                
-                <p id="C">0</p>
-            </div>
+  <header>
+    <h1>Calculadora FISICA</h1>
+      <nav class="opciones">
+        <a href="unidades.html">Conversor de Magnitudes</a>
+        <a href="fuerza.html">Fuerza Magnetica</a>
+        <a href="calculadora.html">Calculadora Normal</a>
+      </nav>
+  </header>
+  <center>
+    <div class="container">
+      <div id="coulomb">
+        <b>Coulomb's Law:</b><br>
+          Fe = k(|q1||q2|)/r^2
+          <br><br>
+        q1 = <input type="number" id="q1number">C<br>
+        q2 = <input type="number" id="q2number">C<br>
+        r = <input type="number" id="rnumber">m<br>
+        Fe = <input type="number" id="fe">N<br>
+        
+        <button onclick="Coulomb()">=</button>
+        
+          <p id="C">0</p>
         </div>
-    </center>
-    <div id="vectorContainer">
-        <div id="coulombVector"></div>
     </div>
+  </center>
     <script>
-        function Coulomb() {
-            var q1 = Math.abs(document.getElementById("q1number").value);
-            var q2 = Math.abs(document.getElementById("q2number").value);
-            var r = document.getElementById("rnumber").value;
-            var Fe = document.getElementById("fe").value;
-            var k = 9000000;
-
-            if (Fe === "") {
+      function Coulomb() {
+  var q1 = Math.abs(document.getElementById("q1number").value);
+  var q2 = Math.abs(document.getElementById("q2number").value);
+  var r = document.getElementById("rnumber").value;
+  var Fe = document.getElementById("fe").value;
+  var k = 9000000;
+  
+  if (Fe === "") {
                 document.getElementById("C").innerHTML = (k * (q1 * q2) / (r ** 2)).toExponential() + "N";
             } else if (r === "") {
                 document.getElementById("C").innerHTML = Math.sqrt(k * (q1 * q2) / Fe).toExponential() + "m";
@@ -69,13 +51,6 @@
             } else {
                 alert("Deja el espacio vacío del elemento a calcular.");
             }
-        }
-
-            // Calcula el tamaño del vector de la fuerza
-            const forceVectorSize = Math.min(100, Math.abs(k * (q1 * q2) / (r ** 2)));
-
-            // Actualiza el estilo del vector en el contenedor
-            document.getElementById("coulombVector").style.width = forceVectorSize + "px";
         }
     </script>
 </body>
