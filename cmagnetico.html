@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ley de Coulomb</title>
+    <title>Ley De Coulomb</title>
     <link rel="stylesheet" href="cmagnetico.css">
     <style>
         #vectorContainer {
@@ -22,12 +22,27 @@
     </style>
 </head>
 <body>
-    <!-- ... (tu código actual) ... -->
+    <header>
+        <h1>Calculadora FISICA</h1>
+        <nav class="opciones">
+            <a href="unidades.html">Conversor de Magnitudes</a>
+            <a href="fuerza.html">Fuerza Magnetica</a>
+            <a href="calculadora.html">Calculadora Normal</a>
+        </nav>
+    </header>
     <center>
         <div class="container">
             <div id="coulomb">
-                <!-- ... (tu código actual) ... -->
+                <b>Coulomb's Law:</b><br>
+                Fe = k(|q1||q2|)/r^2
+                <br><br>
+                q1 = <input type="number" id="q1number">C<br>
+                q2 = <input type="number" id="q2number">C<br>
+                r = <input type="number" id="rnumber">m<br>
+                Fe = <input type="number" id="fe">N<br>
+                
                 <button onclick="Coulomb()">=</button>
+                
                 <p id="C">0</p>
             </div>
         </div>
@@ -36,9 +51,24 @@
         <div id="coulombVector"></div>
     </div>
     <script>
-        // ... (tu código actual) ...
         function Coulomb() {
-            // ... (tu código actual) ...
+            var q1 = Math.abs(document.getElementById("q1number").value);
+            var q2 = Math.abs(document.getElementById("q2number").value);
+            var r = document.getElementById("rnumber").value;
+            var Fe = document.getElementById("fe").value;
+            var k = 9000000;
+
+            if (fe.value == "") {
+                document.getElementById("C").innerHTML = k * ((q1 * q2) / (r ** 2)) + "N";
+            } else if (rnumber.value == "") {
+                document.getElementById("C").innerHTML = Math.sqrt(k * (q1 * q2) / Fe) + "m";
+            } else if (q1number.value == "") {
+                document.getElementById("C").innerHTML = ((Fe * (r ** 2)) / k) / q2 + "C";
+            } else if (q2number.value == "") {
+                document.getElementById("C").innerHTML = ((Fe * (r ** 2)) / k) / q1 + "C";
+            } else {
+                alert("Deja el espacio vacío del elemento a calcular.");
+            }
 
             // Calcula el tamaño del vector de la fuerza
             const forceVectorSize = Math.min(100, Math.abs(k * (q1 * q2) / (r ** 2)));
